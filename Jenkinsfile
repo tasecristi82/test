@@ -51,9 +51,9 @@ pipeline {
                     sh """
                         docker run -d --name test-app-${BUILD_NUMBER} -p 8082:8080 ${IMAGE_NAME}:${IMAGE_TAG}
                         sleep 30
-                        curl -f http://localhost:8080/actuator/health
-                        curl -f http://localhost:8080/
-                        curl -f http://localhost:8080/hello?name=Jenkins
+                        curl -f http://localhost:8082/actuator/health
+                        curl -f http://localhost:8082/
+                        curl -f http://localhost:8082/hello?name=Jenkins
                     """
                 }
             }
