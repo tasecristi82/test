@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker run -d --name test-app-${BUILD_NUMBER} -p 8080:8080 ${IMAGE_NAME}:${IMAGE_TAG}
+                        docker run -d --name test-app-${BUILD_NUMBER} -p 8082:8080 ${IMAGE_NAME}:${IMAGE_TAG}
                         sleep 30
                         curl -f http://localhost:8080/actuator/health
                         curl -f http://localhost:8080/
